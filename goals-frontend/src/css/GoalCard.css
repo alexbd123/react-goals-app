@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f7fa;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.incomplete-goals-list,
+.complete-goals-list {
+  margin-bottom: 3rem;
+}
+
+.incomplete-goals-list h2,
+.complete-goals-list h2 {
+  margin-bottom: 1rem;
+}
+
+.goal-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  position: relative;
+}
+
+.goal-card h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.goal-card p {
+  margin: 0;
+  color: #666;
+}
+
+.goal-card button {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.goal-card button:hover {
+  transform: scale(1.1);
+}
+
+.goal-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

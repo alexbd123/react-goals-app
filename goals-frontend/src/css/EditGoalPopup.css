@@ -1,0 +1,65 @@
+.edit-goal-title-form {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+
+  width: 320px;
+  z-index: 100;
+
+  background: white;
+  border-radius: 16px;
+  padding: 1rem;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.edit-goal-title-form::before {
+  content: "";
+
+  position: absolute;
+  top: -8px;
+  right: 24px;
+
+  width: 16px;
+  height: 16px;
+
+  background: white;
+  transform: rotate(45deg);
+}
+
+.edit-goal-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.edit-goal-title-input,
+.edit-goal-timeframe-input {
+  width: 100%;
+
+  padding: 0.75rem 1rem;
+
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.edit-goal-title-input:focus,
+.edit-goal-timeframe-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.edit-goal-title-form .submit-btn {
+  width: 100%;
+  background: white;
+  color: black;
+}

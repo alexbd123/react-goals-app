@@ -1,0 +1,29 @@
+.deleted-goals-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.deleted-goals-list {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.deleted-goals-list h1,
+.deleted-goals-list h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+
+  border-bottom: 2px solid #ececec;
+}
+
+.deleted-goals-empty {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  padding: 2rem 0;
+}

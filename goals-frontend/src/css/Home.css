@@ -1,0 +1,50 @@
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.goal-submit-form,
+.navbar {
+  grid-column: 1 / -1;
+}
+
+.incomplete-goals-list,
+.complete-goals-list,
+.deleted-goals-list {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  min-height: 400px;
+}
+
+.incomplete-goals-list h2,
+.complete-goals-list h2,
+.deleted-goals-list h2 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #ececec;
+}
+
+.incomplete-message,
+.complete-message {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .goal-submit-form,
+  .navbar {
+    grid-column: auto;
+  }
+}
