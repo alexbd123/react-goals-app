@@ -2,6 +2,8 @@
 
 This is my goals application I have made in React. I wanted to complete a full stack dev project, and I have learned a lot through creating this. 
 
+# The Frontend:
+
 On the frontend side of things, I have been able to remind myself about, or outright learn, and then put into practice the following React priniciples:
 
 - Components
@@ -14,7 +16,7 @@ On the frontend side of things, I have been able to remind myself about, or outr
 
 - useEffect()
 
-*Used for updating the new goal and edit goal submission inputs.*
+*Used for fetching the goals data from the Express GET endpoint. I have read about a lot of React hooks, useEffect() included, that people say will be used a lot in a project. Maybe this application isn't big enough, but I have noted how I only really used useState(). I would be interested in building a project that has the need for more of the well-used hooks, like useRef(), so that I can learn about them properly.*
 
 - Props
 
@@ -38,7 +40,7 @@ On the frontend side of things, I have been able to remind myself about, or outr
 
 - Crucial JavaScript functions for React, like .map and .filter
 
-*What's to be said, lots of mapping in order to list as many goals as can be retrieved, lots of filtering to isolate goals by ID.*
+*The theory I read online and watched in tutorials, that talked about how the map and filter functions are part of the bread and butter of a dev's toolkit when using React, turned out to align with reality. Lots of mapping in order to list as many goals as can be retrieved, lots of filtering to isolate goals by ID.*
 
 - Event handling
 
@@ -50,8 +52,12 @@ On the frontend side of things, I have been able to remind myself about, or outr
 
 - React router for page navigation
 
-*Not particularyl interesting, and I think Next.js incorporates some way of allowing you to do page routing, but useful nonetheless.*
+*One of the few sections, if not the only section, of this project that I took from a YouTube video of someone making a React project. It made me research a tiny bit about Next.js as I had seen that page routing is an inherent part of that framework. I think this project is too small for Next.js from what I can gather, but I would be interested in learning it and building with it anyway.*
 
 I have had contact with React before, however, I really had not built anything as complete as this up until now. 
 
+# The Backend:
+
 Building out a backend for an application, however simplistically, was something I had never done before and it's been a lot of fun learning some of these tools and principles for this project. The backend for this application is an embedded SQLite database connected to my React app through Express.js. I put a lot of time into writing Express routes that are as robust as possible, with as much relevant error handling as I could think of. This is, after all, a project whose secondary use will be that of 'Playwright project guinea pig'. What use is API testing through Playwright if these Express API routes don't have the expected error handling?
+
+It really surprised me how easy it was to use Express.js. I had a fairly good understanding of APIs beforehand, but setting up Express.js for this project has given me a much fuller grasp of the topic. Likewise, researching and then using SQLite really filled a gap in my technical understanding that I hadn't really known was there. How do you start a database? Where does the database live? How can the application talk to it? Again, I unknowingly had a vague understanding of these things, and I had so much fun learning about this stuff by actually doing it.
