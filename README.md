@@ -28,11 +28,11 @@ On the frontend side of things, I have been able to remind myself about, or outr
 
 - Custom hooks ( useGoals() )
 
-*I knew that the initial way I wrote all my goals functions in the Home component itself was probably not an industry standard way of doing things. I made a custom useGoals hooks class and rehomed all goal-related functions. useGoals() returns an object with all the state declarations and functions, and this is then destructured in Home. Very nice.*
+*I knew that the initial way I wrote all my goals functions in the Home component itself was probably not an industry standard way of doing things. I made a custom useGoals hooks class and rehomed all goal-related functions. useGoals() returns an object with all the state declarations and functions, and this is then destructured in Home (at least at first, it was eventually changed to be called during context creation). Very nice.*
 
 - Which components should own state
 
-*This was a really interesting and valuable learning from this project, and the cause of many a head scratch. Early on I came to a point where, having declared my goal state variables low down in the GoalCard component, I realised that the information in the goals object was relevant elsewhere. I eventually came to learn that state should be declared at the lowest possible level that owns all the components that need it, and I therefore ended up declaring the state in Home (which was the fully correct solution, as noted below).*
+*This was a really interesting and valuable learning from this project, and the cause of many a head scratch. Early on I came to a point where, having declared my goal state variables low down in the GoalCard component, I realised that the information in the goals object was relevant elsewhere. I eventually came to learn that state should be declared at the lowest possible level that owns all the components that need it, and I therefore ended up declaring the state in Home (which was not the fully correct solution, as noted below).*
 
 - React context, so that global state can be accessed by different components (GoalsContext)
 
