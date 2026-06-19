@@ -44,7 +44,7 @@ On the frontend side of things, I have been able to remind myself about, or outr
 
 - Event handling
 
-*onClick, for exmaple.*
+*onClick, for example.*
 
 - Using fetch() with state to dynamically display data from an API
 
