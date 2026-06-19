@@ -1,14 +1,14 @@
 # react-goals-app
 
-This is my goals application I have made in React. I wanted to complete a full stack dev project, and I have learned a lot through creating this. 
+This is my goals application that I made in React. I wanted to complete a full stack dev project, and I have learned a lot through creating this. Detailed below are my project outline and general musings.
 
 # The Frontend:
 
-On the frontend side of things, I have been able to remind myself about, or outright learn, and then put into practice the following React priniciples:
+On the frontend side of things, I have been able to remind myself about, or outright learn, then put into practice the following React priniciples:
 
 - Components
 
-*I created a range of components for this application. At the top level, I have Home.jsx and Deleted.jsx, which house the relevant goal components to be displayed to the user. GoalCard is the MVP component-wise, and I found myself applying newly-learnt principles here in the form of the 'if (x) && <Component />' to render the different icons (different square icons depending on goal completion, and then the trash can and reset icons for Completed and Deleted goals). I also got to grips somewhat with the map functions. I now understand why every tutorial says to get comfortable with the map function.* 
+*I created a range of components for this application. At the top level, I have Home.jsx and Deleted.jsx, which house the relevant goal components to be displayed to the user. GoalCard is the MVP component-wise, and I found myself applying newly-learnt principles here in the form of the 'if (x) && <Component />' to render the different icons (different square icons depending on goal completion, and then the trash can and reset icons for Completed and Deleted goals). I also got to grips with the map function. I now understand why every tutorial says to get comfortable with the map function.* 
 
 - useState()
 
