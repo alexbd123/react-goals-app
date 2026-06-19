@@ -12,7 +12,7 @@ On the frontend side of things, I have been able to remind myself about, or outr
 
 - useState()
 
-*In the early stages of the project, I had const [goals, setGoals] = useState([{hardcodedGoalsObject}]), with the application rendering those same goals every time it was rendered. It was satisfying to eventually learn about and then migrate to Express.js and SQLite, with the result of a GET request being the paramter of setGoals().*
+*In the early stages of the project, I had const [goals, setGoals] = useState([{hardcodedGoalsObject}]), with the application rendering those same goals every time it was rendered. It was satisfying to eventually learn about and then migrate to Express.js and SQLite, with the result of a GET request being the parameter of setGoals().*
 
 - useEffect()
 
