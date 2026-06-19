@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import DeletedGoals from './pages/DeletedGoals'
 import { Routes, Route } from 'react-router-dom'
 import { GoalsProvider } from './context/GoalsContext'
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -15,6 +16,12 @@ function App() {
           <Route path="/deleted" element={<DeletedGoals />} />
         </Routes>
         </GoalsProvider>
+        <ToastContainer
+        closeOnClick={true} 
+        autoClose={1500}
+        pauseOnHover={false}
+        hideProgressBar={true}
+        />
       </div>
     </>
   )

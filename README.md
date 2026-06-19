@@ -54,6 +54,10 @@ On the frontend side of things, I have been able to remind myself about, or outr
 
 *One of the few sections, if not the only section, of this project that I took from a YouTube video of someone making a React project. It made me research a tiny bit about Next.js as I had seen that page routing is an inherent part of that framework. I think this project is too small for Next.js from what I can gather, but I would be interested in learning it and building with it anyway.*
 
+- Toast notifications
+
+*I managed to implement Toast notifications in my app through reading the docs alone, as opposed to finding a tutorial and shoehorning someone else's implementation into my use case. This was a useful exercise as it allowed me to better understand the library, and sets me up to do the same with other React libraries.*
+
 I have had contact with React before, however, I really had not built anything as complete as this up until now. 
 
 # The Backend:
