@@ -29,15 +29,19 @@ On the frontend side of things, I have been able to remind myself about, or outr
 *Closely tied with my journey learning more about where state should live, I realised that just moving where state was called to Home wasn't the way to do things. I noticed that, when clicking from Home to Deleted, where all the deleted goals should have been listed (based on the isDeleted property), nothing was there. A bit of investigation showed me that I was calling my custom hook class useGoals at the top of both the Home and Deleted components, meaning that two completely separate versions of state were being used. This led me to learn about using createContext() and useContext(), and I made a new context directory and .js file, and added the contents of useGoals() into the new GoalsContext.provider wrapper. After wrapping the Home and Deleted components with this context, I now had both pages following the same source of truth. Side note - the context setup was the cause of many bugs (human error), in that I would frequently forget to edit the context to include any new goal hooks. I think it was quite a finiccky setup in that, if any new functions were added to useGoals(), many things had to cascade down from there (the context file, all components and then components rendered within those components).*
 
 - Crucial JavaScript functions for React, like .map and .filter
+
 *What's to be said, lots of mapping in order to list as many goals as can be retrieved, lots of filtering to isolate goals by ID.*
 
 - Event handling
+
 *onClick, for exmaple.*
 
 - Using fetch() with state to dynamically display data from an API
+
 *A genuinely satisfying element of this project was the transition from the hardcoded goals object to the application displaying goals grabbed from a database via Express.js.*
 
 - React router for page navigation
+
 *Not particularyl interesting, and I think Next.js incorporates some way of allowing you to do page routing, but useful nonetheless.*
 
 I have had contact with React before, however, I really had not built anything as complete as this up until now. 
