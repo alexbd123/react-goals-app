@@ -18,11 +18,9 @@ function useGoals() {
         setEditingGoalId(id === editingGoalId ? '' : id);
     }
 
-    function updateGoal(id, updates) {
-
+    async function updateGoal(id, updates) {
         const goal = goals.find(goal => goal.id === id);
-        console.log("Goal being edited:", goal);
-        console.log("Updates being applied:", updates);
+
         const requestBody = {
             title: updates.title ?? goal.title,
             timeframe: updates.timeframe ?? goal.timeframe,
@@ -30,34 +28,31 @@ function useGoals() {
             is_deleted: updates.is_deleted ?? goal.is_deleted
         };
 
-        fetch(`http://localhost:3000/goals/${id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(requestBody)
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Goal updated successfully:', data);
-                setGoals(goals.map(goal => {
-                    if (goal.id !== id) {
-                        return goal;
-                    }
-                    return {
-                        ...goal,
-                        title: requestBody.title,
-                        timeframe: requestBody.timeframe,
-                        is_completed: requestBody.is_completed,
-                        is_deleted: requestBody.is_deleted
-                    }
-                }))
-            })
-            .catch(error => {
-                console.error('Error updating goal:', error);
-            });
+        try {
+            const response = await fetch(
+                `http://localhost:3000/goals/${id}`,
+                {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(requestBody)
+                }
+            );
 
-        
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error);
+            }
+
+            setGoals(goals.map(goal =>
+                goal.id === id ? data : goal
+            ));
+        }
+        catch (error) {
+            console.error('Error updating goal:', error);
+        }
     }
 
     function addGoal(title, timeframe) {
@@ -66,7 +61,7 @@ function useGoals() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify( title, timeframe )
+            body: JSON.stringify(title, timeframe)
         })
             .then(response => response.json())
             .then(newGoal => {

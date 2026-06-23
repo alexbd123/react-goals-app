@@ -18,7 +18,7 @@ function App() {
         </GoalsProvider>
         <ToastContainer
         closeOnClick={true} 
-        autoClose={1500}
+        autoClose={1000}
         pauseOnHover={false}
         hideProgressBar={true}
         />

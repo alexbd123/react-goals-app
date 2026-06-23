@@ -6,7 +6,7 @@ function CompletedGoalsList({ goals, updateGoal }) {
     const completedGoals = goals.filter(goal => goal.is_completed === 1 && goal.is_deleted === 0);
 
     return (
-        <div className="complete-goals-list">
+        <div className="complete-goals-list" data-testid="completed-goals-list">
             <h2>Completed:</h2>
             {completedGoals.length === 0 && <p className="complete-message">You have no complete goals!</p>}
             {completedGoals.map(goal => (

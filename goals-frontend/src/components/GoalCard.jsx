@@ -24,29 +24,47 @@ function GoalCard({ goal, setGoalAsEditing, updateGoal, deleteGoal, editingGoalI
         toast.info("You have restored the goal '" + goal.title + "'!");
     }
 
-
     return (
-        <div className="goal-card">
-            <h2>{goal.title}</h2>
-            <p>{goal.timeframe}</p>
+        <div className="goal-card" data-testid={`goal-card-${goal.id}`}>
+            <h2 className={"goal-card-title"}  data-testid={`goal-card-title-${goal.id}`}>
+                {goal.title}
+            </h2>
+            <p className={"goal-card-timeframe"} data-testid={`goal-card-timeframe-${goal.id}`}>
+                {goal.timeframe}
+            </p>
             <div className="goal-actions">
-                {goal.is_deleted === 0 && <button onClick={() => handleGoalCompletion(goal)}>
+                {goal.is_deleted === 0 && <button 
+                className="toggle-completion" 
+                data-testid={`toggle-completion-${goal.id}`}
+                onClick={() => handleGoalCompletion(goal)}>
                     {goal.is_completed ? '▣' : '□'}
                 </button>}
                 {goal.is_completed === 1 && goal.is_deleted === 0 &&
-                    <button onClick={() => handleGoalDeletion(goal)}>
+                    <button 
+                    className="delete-goal"
+                    data-testid={`temp-delete-goal-${goal.id}`}
+                    onClick={() => handleGoalDeletion(goal)}>
                         🗑
                     </button>}
                 {goal.is_completed === 0 && goal.is_deleted === 0 && (
-                    <button onClick={() => setGoalAsEditing(goal.id)}>
+                    <button 
+                    className="edit-goal"
+                    data-testid={`edit-goal-${goal.id}`}
+                    onClick={() => setGoalAsEditing(goal.id)}>
                         ✎
                     </button>
                 )}
                 {goal.is_deleted === 1 &&
-                    <button onClick={() => handleGoalRestoration(goal)}>
+                    <button 
+                    className="restore-goal"
+                    data-testid={`restore-goal-${goal.id}`}
+                    onClick={() => handleGoalRestoration(goal)}>
                         ⟳
                     </button>}
-                {goal.is_deleted === 1 && <button onClick={() => handleGoalDeletion(goal)}>
+                {goal.is_deleted === 1 && <button 
+                className="delete-goal"
+                data-testid={`perma-delete-goal-${goal.id}`}
+                onClick={() => handleGoalDeletion(goal)}>
                     🗑
                 </button>}
             </div>

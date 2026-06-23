@@ -7,7 +7,7 @@ function GoalSubmitInput({ goalsLength, addGoal }) {
     const [newGoalTitle, setNewGoalTitle] = useState("");
     const [newGoalTimeframe, setNewGoalTimeframe] = useState("");
 
-    function determineErrorMessage(noTitle, noTimeframe) {
+    function determineSubmitErrorMessage(noTitle, noTimeframe) {
         if (noTitle && !noTimeframe) {
             return "You must enter a title for your new goal!";
         } else if (!noTitle && noTimeframe) {
@@ -34,7 +34,7 @@ function GoalSubmitInput({ goalsLength, addGoal }) {
                 is_deleted: false
             })
         } else {
-            const msg = determineErrorMessage(noTitle, noTimeframe);
+            const msg = determineSubmitErrorMessage(noTitle, noTimeframe);
             console.log(msg);
             toast.warn(msg, {
                 closeOnClick: true,

@@ -87,12 +87,14 @@ app.put('/goals/:id', (req, res) => {
 });
 
 app.post('/goals', (req, res) => {
-  const { title, timeframe } = req.body;
+  const { title, timeframe, is_completed, is_deleted } = req.body;
   if (title === undefined || timeframe === undefined || title.trim() === '' || timeframe.trim() === '') {
     res.status(400).json({ error: 'Title and timeframe are required and cannot be empty.' });
     return;
   }
-  db.run('INSERT INTO goals (title, timeframe, is_completed, is_deleted) VALUES (?, ?, 0, 0)', [title, timeframe], function (err) {
+  const completedValue = is_completed ?? 0;
+  const deletedValue = is_deleted ?? 0;
+  db.run('INSERT INTO goals (title, timeframe, is_completed, is_deleted) VALUES (?, ?, ?, ?)', [title, timeframe, completedValue, deletedValue], function (err) {
     if (err) {
       console.error(err.message + " Failed to create a new goal in the database.");
       res.status(500).json({ error: 'Failed to create a new goal in the database.' });
@@ -110,7 +112,7 @@ app.post('/goals', (req, res) => {
 
 app.delete('/goals/:id', (req, res) => {
   const id = Number(req.params.id);
-  if (Number.isNaN(id)) {
+;  if (Number.isNaN(id)) {
     res.status(400).json({ error: 'Invalid goal ID. ID must be a number.' });
     return;
   }
@@ -123,7 +125,7 @@ app.delete('/goals/:id', (req, res) => {
       res.status(404).json({ error: 'Goal not found.' });
       return;
     }
-    res.status(200).json({ message: 'Goal deleted successfully' });
+    res.status(200).json({ message: 'Goal deleted successfully.' });
   });
 });
 

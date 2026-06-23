@@ -7,9 +7,12 @@ function DeletedGoalsList({ goals, updateGoal, deleteGoal }) {
 
     return (
         <>
-            <div className="deleted-goals-list">
+            <div className="deleted-goals-list" data-testid="deleted-goals-list">
                 <h2>Deleted goals:</h2>
-                {deletedGoals.length === 0 && <p className="deleted-message">Deleted goals will appear here.</p>}
+                {deletedGoals.length === 0 && 
+                <p className="deleted-message" data-testid="no-deleted-message">
+                    Deleted goals will appear here.
+                </p>}
                 {deletedGoals.map(goal =>
                     <GoalCard
                         goal={goal}
@@ -19,7 +22,7 @@ function DeletedGoalsList({ goals, updateGoal, deleteGoal }) {
                     />
                 )}
             </div>
-        </> 
+        </>
     );
 }
 
