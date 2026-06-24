@@ -8,7 +8,7 @@ function CompletedGoalsList({ goals, updateGoal }) {
     return (
         <div className="complete-goals-list" data-testid="completed-goals-list">
             <h2>Completed:</h2>
-            {completedGoals.length === 0 && <p className="complete-message">You have no complete goals!</p>}
+            {completedGoals.length === 0 && <p className="completed-message">You have no completed goals!</p>}
             {completedGoals.map(goal => (
                 <GoalCard
                     goal={goal}

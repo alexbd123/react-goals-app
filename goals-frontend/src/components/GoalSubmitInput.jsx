@@ -18,8 +18,8 @@ function GoalSubmitInput({ goalsLength, addGoal }) {
     }
 
     const handleNewGoalSubmit = (e) => {
-        const noTitle = newGoalTitle.length === 0;
-        const noTimeframe = newGoalTimeframe.length === 0;
+        const noTitle = newGoalTitle.length === 0 || newGoalTitle === " ";
+        const noTimeframe = newGoalTimeframe.length === 0 || newGoalTimeframe === " ";
         e.preventDefault();
         const newId = goalsLength + 1;
         if (!noTitle && !noTimeframe) {

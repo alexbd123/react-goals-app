@@ -30,7 +30,7 @@
 }
 
 .incomplete-message,
-.complete-message,
+.completed-message,
 .deleted-message {
   text-align: center;
   color: #777;
